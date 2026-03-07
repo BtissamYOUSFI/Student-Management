@@ -13,8 +13,7 @@ public final class DBConnection {
     public static void initDB() {
         try {
             Statement st = getInstance().createStatement();
-            st.executeUpdate("DROP TABLE IF EXISTS student");
-            st.executeUpdate("CREATE TABLE  student (" +
+            st.executeUpdate("CREATE TABLE IF NOT EXISTS student (" +
                     "id INT AUTO_INCREMENT PRIMARY KEY," +
                     "first_name VARCHAR(50)," +
                     "last_name VARCHAR(50)," +
