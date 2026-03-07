@@ -21,7 +21,7 @@ public final class DBConnection {
 //                String pass = System.getenv("MYSQL_PASSWORD");
 
                 conn = DriverManager.getConnection(
-                        "jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false",
+                        "jdbc:mysql://nozomi.proxy.rlwy.net:56838/railway?useSSL=false",
                         "root",
                         "SYmxlnrecAUKFBxfYBfmdCmDkFRVjRvt"
                 );
