@@ -3,11 +3,26 @@ package ma.ensa.studentmanagement.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public final class DBConnection {
     private static Connection conn;
 
     private DBConnection() {}
+
+    public static void initDB() {
+        try {
+            Statement st = getInstance().createStatement();
+            st.executeUpdate("CREATE TABLE IF NOT EXISTS student (" +
+                    "id INT AUTO_INCREMENT PRIMARY KEY," +
+                    "first_name VARCHAR(50)," +
+                    "last_name VARCHAR(50)," +
+                    "email VARCHAR(100)," +
+                    "birthday DATE)");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static Connection getInstance() {
         if (conn == null) {

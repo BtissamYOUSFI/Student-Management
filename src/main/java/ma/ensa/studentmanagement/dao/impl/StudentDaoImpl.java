@@ -10,6 +10,10 @@ import java.util.List;
 
 public class StudentDaoImpl implements StudentDao {
     private Connection conn= DBConnection.getInstance();
+
+    public StudentDaoImpl() {
+        DBConnection.initDB();
+    }
     @Override
     public void addStudent(Student student) {
         String sql = "INSERT INTO student (first_name, last_name, email, birthday) VALUES (?, ?, ?, ?)";
