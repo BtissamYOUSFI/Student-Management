@@ -112,7 +112,7 @@
             <f:facet name="header">First Name</f:facet>
             <h:panelGroup>
                 <h:outputText value="#{s.firstName}" rendered="#{!s.editing}"/>
-                <h:inputText value="#{s.firstName}" rendered="#{s.editing}" binding="#{studentBean.firstNameInput}"/>
+                <h:inputText value="#{s.firstName}" rendered="#{s.editing}" />
             </h:panelGroup>
         </h:column>
 
@@ -120,14 +120,14 @@
             <f:facet name="header">Last Name</f:facet>
             <h:panelGroup>
                 <h:outputText value="#{s.lastName}" rendered="#{!s.editing}"/>
-                <h:inputText value="#{s.lastName}" rendered="#{s.editing}" binding="#{studentBean.lastNameInput}"/>
+                <h:inputText value="#{s.lastName}" rendered="#{s.editing}" />
             </h:panelGroup>
         </h:column>
         <h:column>
             <f:facet name="header">Email</f:facet>
             <h:panelGroup>
                 <h:outputText value="#{s.email}" rendered="#{!s.editing}"/>
-                <h:inputText value="#{s.email}" rendered="#{s.editing}" binding="#{studentBean.emailInput}"/>
+                <h:inputText value="#{s.email}" rendered="#{s.editing}" />
             </h:panelGroup>
         </h:column>
         <!--    <h:column>-->
@@ -144,7 +144,7 @@
                     <f:convertDateTime pattern="yyyy-MM-dd"/>
                 </h:outputText>
                 <h:inputText value="#{s.birthdate}" rendered="#{s.editing}"
-                             binding="#{studentBean.birthDateInput}" pt:type="date">
+                              pt:type="date">
                     <f:convertDateTime pattern="yyyy-MM-dd"/>
                 </h:inputText>
             </h:panelGroup>

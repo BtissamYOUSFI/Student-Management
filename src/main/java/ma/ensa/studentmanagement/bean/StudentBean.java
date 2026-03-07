@@ -47,10 +47,10 @@ public class StudentBean {
 
     public void saveEditStudent() {
         Student s = (Student) dataTable.getRowData();
-        s.setFirstName((String) firstNameInput.getValue());
-        s.setLastName((String) lastNameInput.getValue());
-        s.setEmail((String) emailInput.getValue());
-        s.setBirthdate((Date) birthDateInput.getValue());
+//        s.setFirstName((String) firstNameInput.getValue());
+//        s.setLastName((String) lastNameInput.getValue());
+//        s.setEmail((String) emailInput.getValue());
+//        s.setBirthdate((Date) birthDateInput.getValue());
         dao.updateStudent(s);
         s.setEditing(false);
         students = dao.getStudents();
