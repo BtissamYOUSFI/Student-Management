@@ -4,4 +4,10 @@
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                                   https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
 
+    <managed-bean>
+        <managed-bean-name>studentBean</managed-bean-name>
+        <managed-bean-class>ma.ensa.studentmanagement.bean.StudentBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
 </faces-config>
