@@ -10,18 +10,19 @@ public class Student {
     private String lastName;
     private int age;
     private String email;
-    private Date birthday;
+    private Date birthdate;
+    private boolean editing;
 
 
     public Student() {}
 
-    public Student(int id, String firstName, String lastName, int age, String email, Date birthday) {
+    public Student(int id, String firstName, String lastName, int age, String email, Date birthdate) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
-        this.birthday = birthday;
+        this.birthdate = birthdate;
     }
 
     public int getId() {
@@ -64,11 +65,19 @@ public class Student {
         this.email = email;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public Date getBirthdate() {
+        return birthdate;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public boolean isEditing() {
+        return editing;
+    }
+
+    public void setEditing(boolean editing) {
+        this.editing = editing;
     }
 }
