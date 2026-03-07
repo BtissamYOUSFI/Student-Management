@@ -7,6 +7,7 @@ import ma.ensa.studentmanagement.dao.facade.StudentDao;
 import ma.ensa.studentmanagement.dao.impl.StudentDaoImpl;
 import ma.ensa.studentmanagement.model.Student;
 
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +41,18 @@ public class StudentBean {
     }
 
     public void editStudent(Student student) {
-        dao.updateStudent(student);
+//        Student s = (Student) dataTable.getRowData();
+        student.setEditing(true);
+    }
+
+    public void saveEditStudent() {
+        Student s = (Student) dataTable.getRowData();
+        s.setFirstName((String) firstNameInput.getValue());
+        s.setLastName((String) lastNameInput.getValue());
+        s.setEmail((String) emailInput.getValue());
+        s.setBirthdate((Date) birthDateInput.getValue());
+        dao.updateStudent(s);
+        s.setEditing(false);
         students = dao.getStudents();
     }
 

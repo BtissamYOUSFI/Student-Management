@@ -39,44 +39,71 @@
     <h:outputLabel value="Email :"/>
     <h:inputText value="#{studentBean.student.email}"/>
     <br/><br/>
-    <h:outputLabel value="Birthday :"/>
+    <h:outputLabel value="Birthdate :"/>
     <h:inputText value="#{studentBean.student.birthdate}" pt:type="date">
         <f:convertDateTime pattern="yyyy-MM-dd"/>
     </h:inputText>
     <br/><br/>
     <h:commandButton styleClass="btn" action="#{studentBean.addStudent()}" value="Add"/>
     <br/><br/>
+
+    <h2>Students List</h2>
+    <h:dataTable value="#{studentBean.students}" var="s" binding="#{studentBean.dataTable}" rendered="#{not empty studentBean.students}">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{s.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">First Name</f:facet>
+            <h:panelGroup>
+                <h:outputText value="#{s.firstName}" rendered="#{!s.editing}"/>
+                <h:inputText value="#{s.firstName}" rendered="#{s.editing}" binding="#{studentBean.firstNameInput}"/>
+            </h:panelGroup>
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Last Name</f:facet>
+            <h:panelGroup>
+                <h:outputText value="#{s.lastName}" rendered="#{!s.editing}"/>
+                <h:inputText value="#{s.lastName}" rendered="#{s.editing}" binding="#{studentBean.lastNameInput}"/>
+            </h:panelGroup>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Email</f:facet>
+            <h:panelGroup>
+                <h:outputText value="#{s.email}" rendered="#{!s.editing}"/>
+                <h:inputText value="#{s.email}" rendered="#{s.editing}" binding="#{studentBean.emailInput}"/>
+            </h:panelGroup>
+        </h:column>
+        <!--    <h:column>-->
+        <!--        <f:facet name="header">Birthdate</f:facet>-->
+        <!--        <h:panelGroup>-->
+        <!--            <h:outputText value="#{s.birthdate}" rendered="#{!s.editing}"/>-->
+        <!--            <h:inputText value="#{s.birthdate}" rendered="#{s.editing}" binding="#{studentBean.birthDateInput}"/>-->
+        <!--        </h:panelGroup>-->
+        <!--    </h:column>-->
+        <h:column>
+            <f:facet name="header">Birthdate</f:facet>
+            <h:panelGroup>
+                <h:outputText value="#{s.birthdate}">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                </h:outputText>
+                <h:inputText value="#{s.birthdate}" rendered="#{s.editing}"
+                             binding="#{studentBean.birthDateInput}" pt:type="date">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                </h:inputText>
+            </h:panelGroup>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Actions</f:facet>
+            <h:commandButton value="Edit" action="#{studentBean.editStudent(s)}" rendered="#{!s.editing}" styleClass="btn"/>
+            <h:commandButton value="Save" action="#{studentBean.saveEditStudent()}" rendered="#{s.editing}" styleClass="btn"/>
+            <h:commandButton value="Delete" action="#{studentBean.deleteStudent(s)}" styleClass="btn"/>
+        </h:column>
+    </h:dataTable>
+
 </h:form>
 
-<h2>Students List</h2>
-<h:dataTable value="#{studentBean.students}" var="s" rendered="#{not empty studentBean.students}">
-    <h:column>
-        <f:facet name="header">ID</f:facet>
-        #{s.id}
-    </h:column>
-    <h:column>
-        <f:facet name="header">First Name</f:facet>
-        #{s.firstName}
-    </h:column>
-
-    <h:column>
-        <f:facet name="header">Last Name</f:facet>
-        #{s.lastName}
-    </h:column>
-    <h:column>
-        <f:facet name="header">Email</f:facet>
-        #{s.email}
-    </h:column>
-    <h:column>
-        <f:facet name="header">Birthdate</f:facet>
-        #{s.birthdate}
-    </h:column>
-    <h:column>
-        <f:facet name="header">Actions</f:facet>
-        <h:commandButton value="Edit" action="#{studentBean.editStudent(s)}" styleClass="btn"/>
-        <h:commandButton value="Delete" action="#{studentBean.deleteStudent(s)}" styleClass="btn"/>
-    </h:column>
-</h:dataTable>
 
 </body>
 </html>
