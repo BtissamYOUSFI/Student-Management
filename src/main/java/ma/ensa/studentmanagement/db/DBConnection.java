@@ -14,16 +14,16 @@ public final class DBConnection {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                String host = System.getenv("MYSQL_HOST");
-                String port = System.getenv("MYSQL_PORT");
-                String db   = System.getenv("MYSQL_DATABASE");
-                String user = System.getenv("MYSQL_USER");
-                String pass = System.getenv("MYSQL_PASSWORD");
+//                String host = System.getenv("MYSQL_HOST");
+//                String port = System.getenv("MYSQL_PORT");
+//                String db   = System.getenv("MYSQL_DATABASE");
+//                String user = System.getenv("MYSQL_USER");
+//                String pass = System.getenv("MYSQL_PASSWORD");
 
                 conn = DriverManager.getConnection(
-                        "jdbc:mysql://" + host + ":" + port + "/" + db + "?useSSL=false",
-                        user,
-                        pass
+                        "jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false",
+                        "root",
+                        "SYmxlnrecAUKFBxfYBfmdCmDkFRVjRvt"
                 );
             } catch (ClassNotFoundException | SQLException e) {
                 throw new RuntimeException(e);
