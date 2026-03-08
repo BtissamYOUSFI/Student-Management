@@ -36,9 +36,9 @@ public final class DBConnection {
 //                String pass = System.getenv("MYSQL_PASSWORD");
 
                 conn = DriverManager.getConnection(
-                        "jdbc:mysql://nozomi.proxy.rlwy.net:34528/railway?useSSL=false&allowPublicKeyRetrieval=true",
+                        "jdbc:mysql://nozomi.proxy.rlwy.net:56838/railway?useSSL=false&allowPublicKeyRetrieval=true",
                         "root",
-                        "JQBKrrqvZZTyYZPeyGECIZYsbuGHBWMG"
+                        "SYmxlnrecAUKFBxfYBfmdCmDkFRVjRvt"
                 );
             } catch (ClassNotFoundException | SQLException e) {
                 throw new RuntimeException(e);
