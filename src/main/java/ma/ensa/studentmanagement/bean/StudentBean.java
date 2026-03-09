@@ -16,11 +16,11 @@ public class StudentBean {
     private List<Student> students= new ArrayList<Student>();
     private StudentDao dao = new StudentDaoImpl();
 
-    private HtmlInputText firstNameInput;
-    private HtmlInputText lastNameInput;
-    private HtmlInputText emailInput;
-    private HtmlInputText birthDateInput;
-    private HtmlDataTable dataTable;
+//    private HtmlInputText firstNameInput;
+//    private HtmlInputText lastNameInput;
+//    private HtmlInputText emailInput;
+//    private HtmlInputText birthDateInput;
+//    private HtmlDataTable dataTable;
 
 
     @PostConstruct
@@ -44,8 +44,8 @@ public class StudentBean {
         student.setEditing(true);
     }
 
-    public void saveEditStudent() {
-        Student s = (Student) dataTable.getRowData();
+    public void saveEditStudent(Student s) {
+//        Student s = (Student) dataTable.getRowData();
 //        s.setFirstName((String) firstNameInput.getValue());
 //        s.setLastName((String) lastNameInput.getValue());
 //        s.setEmail((String) emailInput.getValue());
@@ -72,43 +72,43 @@ public class StudentBean {
     }
 
 
-    public HtmlDataTable getDataTable() {
-        return dataTable;
-    }
-
-    public void setDataTable(HtmlDataTable dataTable) {
-        this.dataTable = dataTable;
-    }
-
-    public HtmlInputText getBirthDateInput() {
-        return birthDateInput;
-    }
-
-    public void setBirthDateInput(HtmlInputText birthDateInput) {
-        this.birthDateInput = birthDateInput;
-    }
-
-    public HtmlInputText getEmailInput() {
-        return emailInput;
-    }
-
-    public void setEmailInput(HtmlInputText emailInput) {
-        this.emailInput = emailInput;
-    }
-
-    public HtmlInputText getLastNameInput() {
-        return lastNameInput;
-    }
-
-    public void setLastNameInput(HtmlInputText lastNameInput) {
-        this.lastNameInput = lastNameInput;
-    }
-
-    public HtmlInputText getFirstNameInput() {
-        return firstNameInput;
-    }
-
-    public void setFirstNameInput(HtmlInputText firstNameInput) {
-        this.firstNameInput = firstNameInput;
-    }
+//    public HtmlDataTable getDataTable() {
+//        return dataTable;
+//    }
+//
+//    public void setDataTable(HtmlDataTable dataTable) {
+//        this.dataTable = dataTable;
+//    }
+//
+//    public HtmlInputText getBirthDateInput() {
+//        return birthDateInput;
+//    }
+//
+//    public void setBirthDateInput(HtmlInputText birthDateInput) {
+//        this.birthDateInput = birthDateInput;
+//    }
+//
+//    public HtmlInputText getEmailInput() {
+//        return emailInput;
+//    }
+//
+//    public void setEmailInput(HtmlInputText emailInput) {
+//        this.emailInput = emailInput;
+//    }
+//
+//    public HtmlInputText getLastNameInput() {
+//        return lastNameInput;
+//    }
+//
+//    public void setLastNameInput(HtmlInputText lastNameInput) {
+//        this.lastNameInput = lastNameInput;
+//    }
+//
+//    public HtmlInputText getFirstNameInput() {
+//        return firstNameInput;
+//    }
+//
+//    public void setFirstNameInput(HtmlInputText firstNameInput) {
+//        this.firstNameInput = firstNameInput;
+//    }
 }

@@ -103,7 +103,7 @@
     <br/><br/>
 
     <h2>Students List</h2>
-    <h:dataTable value="#{studentBean.students}" var="s" binding="#{studentBean.dataTable}" rendered="#{not empty studentBean.students}">
+    <h:dataTable value="#{studentBean.students}" var="s"  rendered="#{not empty studentBean.students}">
         <h:column>
             <f:facet name="header">ID</f:facet>
             #{s.id}
@@ -151,7 +151,7 @@
         <h:column>
             <f:facet name="header">Actions</f:facet>
             <h:commandButton value="Edit" action="#{studentBean.editStudent(s)}" rendered="#{!s.editing}" styleClass="btn"/>
-            <h:commandButton value="Save" action="#{studentBean.saveEditStudent()}" rendered="#{s.editing}" styleClass="btn"/>
+            <h:commandButton value="Save" action="#{studentBean.saveEditStudent(s)}" rendered="#{s.editing}" styleClass="btn"/>
             <h:commandButton value="Delete" action="#{studentBean.deleteStudent(s)}" styleClass="btn"/>
         </h:column>
     </h:dataTable>
