@@ -140,11 +140,10 @@
         <h:column>
             <f:facet name="header">Birthdate</f:facet>
             <h:panelGroup>
-                <h:outputText value="#{s.birthdate}">
+                <h:outputText value="#{s.birthdate}" rendered="#{!s.editing}">
                     <f:convertDateTime pattern="yyyy-MM-dd"/>
                 </h:outputText>
-                <h:inputText value="#{s.birthdate}" rendered="#{s.editing}"
-                              pt:type="date">
+                <h:inputText value="#{s.birthdate}" rendered="#{s.editing}" pt:type="date">
                     <f:convertDateTime pattern="yyyy-MM-dd"/>
                 </h:inputText>
             </h:panelGroup>
