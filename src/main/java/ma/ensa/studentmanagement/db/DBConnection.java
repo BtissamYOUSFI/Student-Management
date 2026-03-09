@@ -25,9 +25,10 @@ public final class DBConnection {
     }
 
     public static Connection getInstance() {
-        if (conn == null) {
+//        if (conn == null) {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
+                if (conn == null || !conn.isClosed()) {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
 
 //                String host = System.getenv("MYSQL_HOST");
 //                String port = System.getenv("MYSQL_PORT");
@@ -35,15 +36,16 @@ public final class DBConnection {
 //                String user = System.getenv("MYSQL_USER");
 //                String pass = System.getenv("MYSQL_PASSWORD");
 
-                conn = DriverManager.getConnection(
-                        "jdbc:mysql://nozomi.proxy.rlwy.net:56838/railway?useSSL=false&allowPublicKeyRetrieval=true",
-                        "root",
-                        "SYmxlnrecAUKFBxfYBfmdCmDkFRVjRvt"
-                );
+                    conn = DriverManager.getConnection(
+                            "jdbc:mysql://nozomi.proxy.rlwy.net:56838/railway?useSSL=false&allowPublicKeyRetrieval=true",
+                            "root",
+                            "SYmxlnrecAUKFBxfYBfmdCmDkFRVjRvt"
+                    );
+                }
             } catch (ClassNotFoundException | SQLException e) {
                 throw new RuntimeException(e);
             }
-        }
+//        }
         return conn;
     }
 
