@@ -37,11 +37,10 @@ public class StudentBean {
 
     public void deleteStudent(Student student) {
         dao.deleteStudent(student);
-        students = dao.getStudents();
+//        students = dao.getStudents();
     }
 
     public void editStudent(Student student) {
-//        Student s = (Student) dataTable.getRowData();
         student.setEditing(true);
     }
 
